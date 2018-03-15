@@ -1,8 +1,9 @@
 package de.diskostu.demo.server;
 
+import com.google.gwt.user.server.rpc.RemoteServiceServlet;
 import de.diskostu.demo.client.GreetingService;
 import de.diskostu.demo.shared.FieldVerifier;
-import com.google.gwt.user.server.rpc.RemoteServiceServlet;
+import de.diskostu.demo.shared.model.Person;
 
 /**
  * The server-side implementation of the RPC service.
@@ -44,5 +45,10 @@ public class GreetingServiceImpl extends RemoteServiceServlet implements
     }
     return html.replaceAll("&", "&amp;").replaceAll("<", "&lt;").replaceAll(
         ">", "&gt;");
+  }
+
+  @Override
+  public String greetServer(Person person) throws IllegalArgumentException {
+    return "Hello, " + person.getFirstName() + " " + person.getLastName();
   }
 }

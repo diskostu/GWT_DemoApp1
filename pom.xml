@@ -57,6 +57,12 @@
             <version>4.11</version>
             <scope>test</scope>
         </dependency>
+
+        <dependency>
+            <groupId>de.knightsoft-net</groupId>
+            <artifactId>gwt-commons-lang3</artifactId>
+            <version>3.7-0</version>
+        </dependency>
     </dependencies>
 
     <build>
